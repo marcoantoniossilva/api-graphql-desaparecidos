@@ -1,0 +1,22 @@
+type Bairro {
+  codBairro: Int
+  cidade: Cidade
+  nomeBairro: String
+}
+
+type Query {
+  bairros: [Bairro]
+  bairro(codBairro: Int): Bairro
+}
+
+input BairroInput {
+  codBairro: Int
+  codCidade: Int
+  nomeBairro: String
+}
+
+type Mutation {
+  criarBairro(data: BairroInput): Bairro
+  atualizarBairro(codBairro: Int!, data: BairroInput): Bairro
+  deletarBairro(codBairro: Int!): Boolean
+}

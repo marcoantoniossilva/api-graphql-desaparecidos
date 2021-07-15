@@ -1,0 +1,24 @@
+type Local {
+  codLocal: Int
+  bairro: Bairro
+  latitude: String
+  longitude: String
+}
+
+type Query {
+  locais: [Local]
+  local(codLocal: Int): Local
+}
+
+input LocalInput {
+  codLocal: Int
+  codBairro: Int
+  latitude: String
+  longitude: String
+}
+
+type Mutation {
+  criarLocal(data: LocalInput): Local
+  atualizarLocal(codLocal: Int!, data: LocalInput): Local
+  deletarLocal(codLocal: Int!): Boolean
+}

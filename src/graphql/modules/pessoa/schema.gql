@@ -1,0 +1,41 @@
+type Pessoa {
+  codPessoa: Int
+  nome: String
+  dataNascimento: String
+  imagem: String
+  sexo: String
+  corOlhos: String
+  corPele: String
+  corCabelo: String
+  pesoAproximado: Float
+  alturaAproximada: Float
+  tipoFisico: String
+  transtornoMental: String
+  marcaCaracteristica: String
+}
+
+input PessoaInput {
+  nome: String
+  dataNascimento: String
+  imagem: String
+  sexo: String
+  corOlhos: String
+  corPele: String
+  corCabelo: String
+  pesoAproximado: Float
+  alturaAproximada: Float
+  tipoFisico: String
+  transtornoMental: String
+  marcaCaracteristica: String
+}
+
+type Query {
+  pessoas: [Pessoa]
+  pessoa(codPessoa: Int): Pessoa
+}
+
+type Mutation {
+  criarPessoa(data: PessoaInput): Pessoa
+  atualizarPessoa(codPessoa: Int!, data: PessoaInput): Pessoa
+  deletarPessoa(codPessoa: Int!): Boolean
+}

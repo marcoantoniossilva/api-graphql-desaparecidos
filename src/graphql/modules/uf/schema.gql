@@ -1,0 +1,20 @@
+type Uf {
+  codUf: Int
+  sigla: String
+}
+
+type Query {
+  ufs: [Uf]
+  uf(codUf: Int): Uf
+}
+
+input FiltroInput {
+  codUf: Int
+  siglaUf: String
+}
+
+type Mutation {
+  criarUf(sigla: String): Uf
+  atualizarUf(codUf: Int!, novaSigla: String): Uf
+  deletarUf(filtro: FiltroInput): Boolean
+}

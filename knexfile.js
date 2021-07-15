@@ -1,11 +1,9 @@
-// Update with your config settings.
-
 module.exports = {
-  client: "pg",
+  client: "mysql",
   connection: {
-    database: "postgres",
-    user: "postgres",
-    password: "docker",
+    database: "relembrar",
+    user: "root",
+    password: "",
   },
   pool: {
     min: 2,

@@ -1,0 +1,22 @@
+type Cidade {
+  codCidade: Int
+  uf: Uf
+  nomeCidade: String
+}
+
+type Query {
+  cidades: [Cidade]
+  cidade(codCidade: Int): Cidade
+}
+
+input CidadeInput {
+  codCidade: Int
+  codUf: Int
+  nomeCidade: String
+}
+
+type Mutation {
+  criarCidade(data: CidadeInput): Cidade
+  atualizarCidade(codCidade: Int!, data: CidadeInput): Cidade
+  deletarCidade(codCidade: Int!): Boolean
+}
