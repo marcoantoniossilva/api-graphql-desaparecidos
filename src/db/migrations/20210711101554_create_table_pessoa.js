@@ -1,12 +1,10 @@
-const { linkToExecutor } = require("graphql-tools");
-
 exports.up = function (knex) {
   return knex.schema.createTable("pessoas", (table) => {
     table.increments("codPessoa").primary();
     table.string("nome").notNull();
     table.date("dataNascimento");
     table.string("imagem");
-    table.enu("sexo", ["F", "M"]);
+    table.enum("sexo", ["F", "M"]);
     table.string("corOlhos");
     table.string("corPele");
     table.string("corCabelo");

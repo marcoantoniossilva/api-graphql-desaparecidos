@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("locais", (table) => {
     table.increments("codLocal").primary();
-    table.integer("codBairro").notNullable();
+    table.integer("codBairro").unsigned().notNullable();
     table.string("latitude");
     table.string("longitude");
 

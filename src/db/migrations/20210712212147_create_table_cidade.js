@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("cidades", (table) => {
     table.increments("codCidade").primary();
-    table.integer("codUf").notNullable();
+    table.integer("codUf").unsigned().notNullable();
     table.string("nomeCidade").notNull();
 
     table.foreign("codUf").references("codUf").inTable("ufs");

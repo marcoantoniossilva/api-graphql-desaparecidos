@@ -14,10 +14,6 @@ module.exports = {
     },
   },
   Bairro: {
-    cidade(bairro) {
-      // bairro = objeto com atributo faltante (Bairro)
-      const codCidade = bairro.codCidade;
-      return db("cidades").where({ codCidade }).first();
-    },
+    cidade: async ({ codCidade }) => await db("cidades").where({ codCidade }).first()
   },
 };

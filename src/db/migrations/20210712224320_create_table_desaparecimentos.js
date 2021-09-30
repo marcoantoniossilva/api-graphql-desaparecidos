@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema.createTable("desaparecimentos", (table) => {
     table.increments("codDesaparecimento").primary();
-    table.integer("codPessoa").notNullable();
-    table.integer("codLocal").notNullable();
+    table.integer("codPessoa").unsigned().notNullable();
+    table.integer("codLocal").unsigned().notNullable();
     table.date("dataDesaparecimento");
 
     table.text("informacoes");
