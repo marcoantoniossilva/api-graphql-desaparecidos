@@ -21,6 +21,8 @@ module.exports = {
       await (
         await db("desaparecimentos").insert(data).returning("*")
       )[0],
+    criarDesaparecimentos: async (_, { data }) =>
+      await db("desaparecimentos").insert(data).returning("*"),
     atualizarDesaparecimento: async (_, { codDesaparecimento, data }) =>
       await db("desaparecimentos").where({ codDesaparecimento }).update(data),
     deletarDesaparecimento: async (_, { codDesaparecimento }) => {
