@@ -6,6 +6,8 @@ module.exports = {
   },
   Mutation: {
     criarUf: async (_, { data }) => await db("ufs").insert(data),
+    criarUfs: async (_, { data }) =>
+      await db("ufs").insert(data).returning("*"),
     atualizarUf: async (_, { codUf, data }) =>
       await db("ufs").where({ codUf }).update(data),
     deletarUf: async (_, { filtro }) => {

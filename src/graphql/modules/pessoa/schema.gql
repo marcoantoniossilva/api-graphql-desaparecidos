@@ -36,6 +36,7 @@ type Query {
 
 type Mutation {
   criarPessoa(data: PessoaInput): Pessoa
+  criarPessoas(data: [PessoaInput]): [Pessoa]
   atualizarPessoa(codPessoa: Int!, data: PessoaInput): Pessoa
   deletarPessoa(codPessoa: Int!): Boolean
 }

@@ -17,6 +17,7 @@ input CidadeInput {
 
 type Mutation {
   criarCidade(data: CidadeInput): Cidade
+  criarCidades(data: [CidadeInput]): [Cidade]
   atualizarCidade(codCidade: Int!, data: CidadeInput): Cidade
   deletarCidade(codCidade: Int!): Boolean
 }

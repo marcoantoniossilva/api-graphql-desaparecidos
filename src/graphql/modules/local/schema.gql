@@ -19,6 +19,7 @@ input LocalInput {
 
 type Mutation {
   criarLocal(data: LocalInput): Local
+  criarLocais(data: [LocalInput]): [Local]
   atualizarLocal(codLocal: Int!, data: LocalInput): Local
   deletarLocal(codLocal: Int!): Boolean
 }

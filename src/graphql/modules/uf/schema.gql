@@ -15,6 +15,7 @@ input FiltroInput {
 
 type Mutation {
   criarUf(sigla: String): Uf
+  criarUfs(data: [FiltroInput]): [Uf]
   atualizarUf(codUf: Int!, novaSigla: String): Uf
   deletarUf(filtro: FiltroInput): Boolean
 }

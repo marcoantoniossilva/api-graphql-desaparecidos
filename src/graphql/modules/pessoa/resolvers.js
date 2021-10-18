@@ -7,6 +7,8 @@ module.exports = {
   },
   Mutation: {
     criarPessoa: async (_, { data }) => await db("pessoas").insert(data),
+    criarPessoas: async (_, { data }) =>
+      await db("pessoas").insert(data).returning("*"),
     atualizarPessoa: async (_, { codPessoa, data }) =>
       await db("pessoas").where({ codPessoa }).update(data),
     deletarPessoa: async (_, { codPessoa }) => {

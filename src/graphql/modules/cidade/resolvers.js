@@ -7,6 +7,8 @@ module.exports = {
   },
   Mutation: {
     criarCidade: async (_, { data }) => await db("cidades").insert(data),
+    criarCidades: async (_, { data }) =>
+      await db("cidades").insert(data).returning("*"),
     atualizarCidade: async (_, { codCidade, data }) =>
       await db("cidades").where({ codCidade }).update(data),
     deletarCidade: async (_, { codCidade }) => {

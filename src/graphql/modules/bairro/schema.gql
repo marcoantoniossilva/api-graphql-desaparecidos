@@ -17,6 +17,7 @@ input BairroInput {
 
 type Mutation {
   criarBairro(data: BairroInput): Bairro
+  criarBairros(data: [BairroInput]): [Bairro]
   atualizarBairro(codBairro: Int!, data: BairroInput): Bairro
   deletarBairro(codBairro: Int!): Boolean
 }
