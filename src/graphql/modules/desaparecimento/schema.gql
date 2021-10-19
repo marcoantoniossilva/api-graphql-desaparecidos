@@ -9,6 +9,10 @@ type Desaparecimento {
   ultimaHoraVista: String
 }
 
+type TotalDesaparecimento {
+  total: Int
+}
+
 input DesaparecimentoInput {
   codDesaparecimento: Int
   codPessoa: Int
@@ -27,6 +31,7 @@ input FiltroDesaparecimento {
 
 type Query {
   desaparecimentos: [Desaparecimento]
+  desaparecimentosCount: TotalDesaparecimento
   desaparecimento(filtro: FiltroDesaparecimento): Desaparecimento
 }
 
