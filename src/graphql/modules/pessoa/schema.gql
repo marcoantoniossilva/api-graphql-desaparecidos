@@ -15,6 +15,7 @@ type Pessoa {
 }
 
 input PessoaInput {
+  codPessoa: Int
   nome: String
   dataNascimento: String
   imagem: String
