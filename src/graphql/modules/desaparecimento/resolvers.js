@@ -2,11 +2,8 @@ const db = require("../../../db");
 module.exports = {
   Query: {
     desaparecimentos: async () => await db("desaparecimentos"),
-    desaparecimentosCount: async () => {
-      teste = await db("desaparecimentos").count("codDesaparecimento as total");
-      console.log(teste[0]);
-      return teste[0];
-    },
+    desaparecimentosCount: async () =>
+      await db("desaparecimentos").count("codDesaparecimento as total"),
     desaparecimento: async (_, { filtro }) => {
       if (filtro.codDesaparecimento) {
         return await db("desaparecimentos")
