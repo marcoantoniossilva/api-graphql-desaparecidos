@@ -1,9 +1,9 @@
 module.exports = {
   client: "mysql",
   connection: {
-    database: "relembrar",
+    database: "api-desaparecidos",
     user: "root",
-    password: "",
+    password: "root",
   },
   pool: {
     min: 2,
